@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wedding Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero" id="top">
+        <div class="glow"></div>
+        <nav class="pill-nav">
+          <a href="#story">Our Story</a>
+          <a href="#details">Details</a>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-left">
+            <p class="family-line reveal delay-1">
+              Together with our families, we invite you to share our joy.
+            </p>
+            <h1 class="names reveal delay-2">
+              <span class="name groom">Sasidharan</span>
+              <span class="amp">Weds</span>
+              <span class="name bride">Lavanya</span>
+            </h1>
+            <p class="tagline reveal delay-3">
+              We request the honor of your presence as we celebrate our royal union.
+            </p>
+
+            <div class="cta-row reveal delay-4">
+              <a class="primary" href="assets/invitation.svg" download="Wedding-Invitation">
+                <span class="btn-icon" aria-hidden="true">⬇</span>
+                Download Invitation
+              </a>
+              <a
+                class="secondary"
+                href="https://www.google.com/maps?q=Rosewood+Grand+Hall+Riverside+Chennai"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span class="btn-icon" aria-hidden="true">📍</span>
+                Open Location
+              </a>
+            </div>
+
+            <div class="quote-panel reveal delay-5">
+              <div class="quote-header">
+                <h3>Love Quote</h3>
+                <div class="quote-actions">
+                  <button class="ghost" id="prevQuote" type="button">Prev</button>
+                  <button class="ghost" id="nextQuote" type="button">Next</button>
+                </div>
+              </div>
+              <p class="quote-text" id="quoteText"></p>
+              <p class="quote-author" id="quoteAuthor"></p>
+            </div>
+
+            <div class="countdown reveal delay-6" aria-live="polite">
+              <div class="time-box">
+                <span id="days">0</span>
+                <small>Days</small>
+              </div>
+              <div class="time-box">
+                <span id="hours">0</span>
+                <small>Hours</small>
+              </div>
+              <div class="time-box">
+                <span id="minutes">0</span>
+                <small>Minutes</small>
+              </div>
+              <div class="time-box">
+                <span id="seconds">0</span>
+                <small>Seconds</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <div class="portrait-card reveal delay-3">
+              <img
+                class="couple-art"
+                src="assets/couple.svg"
+                alt="Cartoon illustration of the bride and groom"
+              />
+              <div class="badge">June 20, 2026</div>
+            </div>
+            <div class="hero-gallery reveal delay-4">
+              <img
+                src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?auto=format&fit=crop&w=700&q=80"
+                alt="Floral wedding decor"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80"
+                alt="Wedding rings"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="details" id="details">
+        <div class="details-grid">
+          <div class="details-card scroll-reveal">
+            <h3>Wedding Details</h3>
+            <ul>
+              <li>Date: Saturday, June 20, 2026</li>
+              <li>Time: 4:30 PM onwards</li>
+              <li>Venue: Rosewood Grand Hall, Riverside, Chennai</li>
+              <li>Dress Code: Festive Elegance</li>
+            </ul>
+          </div>
+          <div class="details-card scroll-reveal">
+            <h3>Reception Details</h3>
+            <ul>
+              <li>Date: Sunday, June 21, 2026</li>
+              <li>Time: 6:30 PM onwards</li>
+              <li>Venue: Rosewood Grand Hall, Riverside, Chennai</li>
+              <li>Dinner &amp; Dance</li>
+            </ul>
+          </div>
+          <div class="details-card scroll-reveal">
+            <h3>Contact</h3>
+            <ul>
+              <li>Family RSVP: +91 98765 43210</li>
+              <li>Email: celebration@example.com</li>
+              <li>Hosts: With love from both families</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="story" id="story">
+        <div class="story-content">
+          <h2>Our Story</h2>
+          <p>
+            Two hearts, one journey. We met, we laughed, and we grew together. Now we are
+            thrilled to begin a new chapter surrounded by the people who have shaped our lives.
+          </p>
+          <div class="timeline">
+            <div class="timeline-item">
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABN0lEQVR4nO3YMQqDUBSG4Zk0sP9m3M8h0u2HkI2S9uJm0Q2b0cQ9fCw8kMZkqkQpE9F7w0mXKX7qg9wqQmYxO0M0k8q4bF8g2G2W5N3w2g9b5b0a9f0p7l2cX8o3s1lUo9v0iQnB3jv3g+W7k8x8nO2Hj0f3fC5b4wQqQ0yK0B0oGf0rYxFQm6xv1dQ9zM8j1m3m8m8b4GgY1nGv0D0z2b3l1u0m0aW5+2tQWQq5m0G0l9G1n3wVxJr6s7wI7rQe8nO7o+o3xJ4n9Tz2n3tV1A3vQ2w1u2m8u1u2s8wAAAABJRU5ErkJggg=="
+                alt="Caricature: first chat"
+              />
+              <div>
+                <span>First Chat</span>
+                <p>05 Jan 2020</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABM0lEQVR4nO3YMQqDUBSG4Zk0sP9m3M8h0u2HkI2S9uJm0Q2b0cQ9fCw8kMZkqkQpE9F7w0mXKX7qg9wqQmYxO0M0k8q4bF8g2G2W5N3w2g9b5b0a9f0p7l2cX8o3s1lUo9v0iQnB3jv3g+W7k8x8nO2Hj0f3fC5b4wQqQ0yK0B0oGf0rYxFQm6xv1dQ9zM8j1m3m8m8b4GgY1nGv0D0z2b3l1u0m0aW5+2tQWQq5m0G0l9G1n3wVxJr6s7wI7rQe8nO7o+o3xJ4n9Tz2n3tV1A3vQ2w1u2m8u1u2s8wAAAABJRU5ErkJggg=="
+                alt="Caricature: first meet"
+              />
+              <div>
+                <span>First Meet</span>
+                <p>16 Mar 2020</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABO0lEQVR4nO3YMQqDUBSG4Zk0sP9m3M8h0u2HkI2S9uJm0Q2b0cQ9fCw8kMZkqkQpE9F7w0mXKX7qg9wqQmYxO0M0k8q4bF8g2G2W5N3w2g9b5b0a9f0p7l2cX8o3s1lUo9v0iQnB3jv3g+W7k8x8nO2Hj0f3fC5b4wQqQ0yK0B0oGf0rYxFQm6xv1dQ9zM8j1m3m8m8b4GgY1nGv0D0z2b3l1u0m0aW5+2tQWQq5m0G0l9G1n3wVxJr6s7wI7rQe8nO7o+o3xJ4n9Tz2n3tV1A3vQ2w1u2m8u1u2s8wAAAABJRU5ErkJggg=="
+                alt="Caricature: proposal"
+              />
+              <div>
+                <span>Proposal</span>
+                <p>22 Feb 2022</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABP0lEQVR4nO3YMQqDUBSG4Zk0sP9m3M8h0u2HkI2S9uJm0Q2b0cQ9fCw8kMZkqkQpE9F7w0mXKX7qg9wqQmYxO0M0k8q4bF8g2G2W5N3w2g9b5b0a9f0p7l2cX8o3s1lUo9v0iQnB3jv3g+W7k8x8nO2Hj0f3fC5b4wQqQ0yK0B0oGf0rYxFQm6xv1dQ9zM8j1m3m8m8b4GgY1nGv0D0z2b3l1u0m0aW5+2tQWQq5m0G0l9G1n3wVxJr6s7wI7rQe8nO7o+o3xJ4n9Tz2n3tV1A3vQ2w1u2m8u1u2s8wAAAABJRU5ErkJggg=="
+                alt="Caricature: flowering ceremony"
+              />
+              <div>
+                <span>Flowering Ceremony</span>
+                <p>08 Aug 2023</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABP0lEQVR4nO3YMQqDUBSG4Zk0sP9m3M8h0u2HkI2S9uJm0Q2b0cQ9fCw8kMZkqkQpE9F7w0mXKX7qg9wqQmYxO0M0k8q4bF8g2G2W5N3w2g9b5b0a9f0p7l2cX8o3s1lUo9v0iQnB3jv3g+W7k8x8nO2Hj0f3fC5b4wQqQ0yK0B0oGf0rYxFQm6xv1dQ9zM8j1m3m8m8b4GgY1nGv0D0z2b3l1u0m0aW5+2tQWQq5m0G0l9G1n3wVxJr6s7wI7rQe8nO7o+o3xJ4n9Tz2n3tV1A3vQ2w1u2m8u1u2s8wAAAABJRU5ErkJggg=="
+                alt="Caricature: engagement"
+              />
+              <div>
+                <span>Engagement</span>
+                <p>12 Jan 2024</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABP0lEQVR4nO3YMQqDUBSG4Zk0sP9m3M8h0u2HkI2S9uJm0Q2b0cQ9fCw8kMZkqkQpE9F7w0mXKX7qg9wqQmYxO0M0k8q4bF8g2G2W5N3w2g9b5b0a9f0p7l2cX8o3s1lUo9v0iQnB3jv3g+W7k8x8nO2Hj0f3fC5b4wQqQ0yK0B0oGf0rYxFQm6xv1dQ9zM8j1m3m8m8b4GgY1nGv0D0z2b3l1u0m0aW5+2tQWQq5m0G0l9G1n3wVxJr6s7wI7rQe8nO7o+o3xJ4n9Tz2n3tV1A3vQ2w1u2m8u1u2s8wAAAABJRU5ErkJggg=="
+                alt="Caricature: wedding"
+              />
+              <div>
+                <span>Wedding</span>
+                <p>20 Jun 2026</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
