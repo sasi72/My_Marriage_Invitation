@@ -131,7 +131,7 @@ body::after {
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   font-family: "Cinzel", serif;
-  color: var(--gold);
+  color: var(--text-muted);
 }
 
 .names {

@@ -21,7 +21,7 @@ const quotes = [
   },
 ];
 
-const countdownTarget = new Date("2026-06-20T16:30:00");
+const countdownTarget = new Date("2026-05-29T09:30:00");
 const quoteText = document.getElementById("quoteText");
 const quoteAuthor = document.getElementById("quoteAuthor");
 
