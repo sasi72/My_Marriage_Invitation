@@ -1,11 +1,11 @@
 const quotes = [
   {
-    text: "Love is composed of a single soul inhabiting two bodies.",
-    author: "Aristotle",
+    text: "கண்ணின் வழி வந்த காதல், மொழியில்லாமல் செதுக்கிய கவிதை. நாள் முழுதும் நினைவோடு, என் கண்கள் உன்னையே தேடுகின்றன.",
+    author: "Someone",
   },
   {
-    text: "The best thing to hold onto in life is each other.",
-    author: "Audrey Hepburn",
+    text: "வார்த்தைகள் இல்லாத அமைதி, மௌனத்தின் நிழலில் காதல் மலர்ந்தது. கண்கள் மட்டுமே பேசின, மனம் மட்டும் காதலித்து விட்டது.",
+    author: "Stranger",
   },
   {
     text: "Where there is love there is life.",
