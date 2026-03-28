@@ -1,3 +1,15 @@
+/* ---- Splash screen (curtain) ---- */
+document.body.classList.add('splash-active');
+function openInvitation() {
+  const splash = document.getElementById('splash');
+  splash.classList.add('open');
+  document.body.classList.remove('splash-active');
+  // Remove splash after curtain finishes sliding
+  setTimeout(() => {
+    splash.remove();
+  }, 4500);
+}
+
 /* ---- Floating petals ---- */
 const petalColors = ['#e8a0a0', '#c9a96e', '#d4a0c0', '#f0d9a8'];
 for (let i = 0; i < 22; i++) {
@@ -81,19 +93,24 @@ function downloadInvitation() {
 
 /* ---- Sparkle on click ---- */
 document.addEventListener('click', function (e) {
-  const colors = ['#c9a96e', '#e8a0a0', '#f0d9a8', '#fff', '#d4a0c0'];
-  for (let i = 0; i < 8; i++) {
+  const colors = ['#c9a96e', '#e8a0a0', '#f0d9a8', '#fff', '#d4a0c0', '#c97070', '#ff8888'];
+  const count = 18;
+  for (let i = 0; i < count; i++) {
     const s = document.createElement('div');
     s.className = 'sparkle';
-    const angle = (Math.PI * 2 / 8) * i;
-    const dist = 30 + Math.random() * 30;
+    const angle = (Math.PI * 2 / count) * i + (Math.random() - 0.5) * 0.4;
+    const dist = 25 + Math.random() * 50;
+    const size = 8 + Math.random() * 10;
     s.style.setProperty('--dx', Math.cos(angle) * dist + 'px');
     s.style.setProperty('--dy', Math.sin(angle) * dist + 'px');
+    s.style.setProperty('--rot', (Math.random() * 360 - 180) + 'deg');
     s.style.left = e.clientX + 'px';
     s.style.top  = e.clientY + 'px';
-    s.style.background = colors[Math.floor(Math.random() * colors.length)];
-    s.style.animationDelay = Math.random() * 0.15 + 's';
+    s.style.color = colors[Math.floor(Math.random() * colors.length)];
+    s.style.fontSize = size + 'px';
+    s.style.animationDelay = Math.random() * 0.2 + 's';
+    s.style.animationDuration = (0.7 + Math.random() * 0.5) + 's';
     document.body.appendChild(s);
-    setTimeout(() => s.remove(), 900);
+    setTimeout(() => s.remove(), 1300);
   }
 });

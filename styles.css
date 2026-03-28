@@ -15,6 +15,163 @@
 
 html { scroll-behavior: smooth; overflow-x: hidden; }
 
+/* ─── CURTAIN SPLASH ─── */
+#splash {
+  position: fixed; inset: 0; z-index: 9999;
+  overflow: hidden;
+}
+
+/* Curtain rod at top */
+.curtain-rod {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 18px;
+  background: linear-gradient(180deg, #3a2a10 0%, #8b6914 30%, #c9a96e 50%, #8b6914 70%, #3a2a10 100%);
+  z-index: 10;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+/* Curtain panels */
+.curtain {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 50%;
+  display: flex;
+  transition: transform 4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  z-index: 5;
+}
+.curtain-left  { left: 0; }
+.curtain-right { right: 0; }
+
+/* Curtain fold strips */
+.curtain-fold {
+  flex: 1;
+  position: relative;
+  background: linear-gradient(180deg,
+    #1a0a2e 0%,
+    #2d1045 8%,
+    #1a0a2e 15%,
+    #4a1942 50%,
+    #1a0a2e 85%,
+    #2d1045 92%,
+    #150820 100%);
+}
+.curtain-left .curtain-fold {
+  box-shadow: inset -4px 0 12px rgba(0,0,0,0.3), inset 3px 0 8px rgba(74,25,66,0.2);
+}
+.curtain-right .curtain-fold {
+  box-shadow: inset 4px 0 12px rgba(0,0,0,0.3), inset -3px 0 8px rgba(74,25,66,0.2);
+}
+/* Subtle shimmer on folds */
+.curtain-fold::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(107,39,55,0.1) 30%,
+    rgba(139,58,42,0.14) 50%,
+    rgba(107,39,55,0.1) 70%,
+    transparent 100%);
+  pointer-events: none;
+}
+/* Gather / drape at bottom */
+.curtain-fold::before {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 80px;
+  background: linear-gradient(0deg, #0e0618 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Open state — curtains slide apart */
+#splash.open .curtain-left  { transform: translateX(-105%); }
+#splash.open .curtain-right { transform: translateX(105%); }
+#splash.open .curtain-rod   { transform: translateY(-100%); transition: transform 0.8s ease 0.5s; }
+#splash.open .knot-wrapper  { opacity: 0; transform: translate(-50%, -50%) scale(0.3); transition: all 0.5s ease; }
+
+/* Knot in center */
+.knot-wrapper {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.knot-wrapper:hover { transform: translate(-50%, -50%) scale(1.1); }
+.knot-wrapper:active { transform: translate(-50%, -50%) scale(0.95); }
+
+.knot-svg {
+  width: clamp(100px, 28vw, 160px);
+  height: clamp(100px, 28vw, 160px);
+  filter: drop-shadow(0 0 25px rgba(201,169,110,0.5)) drop-shadow(0 0 60px rgba(201,169,110,0.2));
+  animation: knotPulse 2.5s ease-in-out infinite;
+}
+@keyframes knotPulse {
+  0%, 100% { filter: drop-shadow(0 0 25px rgba(201,169,110,0.5)) drop-shadow(0 0 60px rgba(201,169,110,0.2)); }
+  50%      { filter: drop-shadow(0 0 35px rgba(201,169,110,0.7)) drop-shadow(0 0 80px rgba(201,169,110,0.35)); }
+}
+.knot-path {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: drawKnot 2.5s ease forwards;
+}
+.knot-heart {
+  opacity: 0;
+  animation: fadeInHeart 0.8s ease forwards 2s;
+}
+@keyframes drawKnot {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes fadeInHeart {
+  to { opacity: 0.9; }
+}
+
+.splash-hint {
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(240,217,168,0.5);
+  margin-top: 12px;
+  animation: fadeDown 1.6s ease both 2.2s, pulse-hint 2s ease-in-out infinite 3.5s;
+}
+.splash-tag {
+  font-size: 0.7rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(240,217,168,0.6);
+  margin-bottom: 8px;
+  animation: fadeDown 1s ease both 0.3s;
+}
+.splash-names {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  color: var(--gold-light);
+  margin-bottom: 16px;
+  text-shadow: 0 2px 20px rgba(201,169,110,0.4);
+  animation: fadeDown 1.2s ease both 0.6s;
+}
+.splash-names span {
+  color: var(--rose);
+  font-size: 0.7em;
+}
+@keyframes pulse-hint {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* Hide page content until splash is dismissed */
+body.splash-active nav,
+body.splash-active .orb,
+body.splash-active .petal {
+  opacity: 0;
+  transition: opacity 0.6s ease 0.8s;
+}
+body.splash-active {
+  overflow: hidden;
+}
+
 body {
   font-family: 'Lato', sans-serif;
   min-height: 100vh;
@@ -222,12 +379,6 @@ section { padding: 60px 0; }
   border-bottom: 1px solid var(--glass-border);
 }
 .photo-placeholder--sm { min-height: 140px; padding: 24px 20px; }
-.photo-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
 .photo-placeholder svg {
   width: 52px; height: 52px;
   stroke: var(--gold); opacity: 0.55;
@@ -413,12 +564,18 @@ footer {
 /* ─── Sparkle ─── */
 .sparkle {
   position: fixed; pointer-events: none; z-index: 9999;
-  width: 6px; height: 6px; border-radius: 50%;
-  animation: sparkle-anim 0.8s ease-out forwards;
+  width: 10px; height: 10px;
+  animation: sparkle-anim 1s ease-out forwards;
+}
+.sparkle::before {
+  content: '❤';
+  font-size: 10px;
+  line-height: 1;
+  display: block;
 }
 @keyframes sparkle-anim {
-  0%   { opacity: 1; transform: scale(1) translate(0,0); }
-  100% { opacity: 0; transform: scale(0) translate(var(--dx), var(--dy)); }
+  0%   { opacity: 1; transform: scale(1) translate(0,0) rotate(0deg); }
+  100% { opacity: 0; transform: scale(0.3) translate(var(--dx), var(--dy)) rotate(var(--rot)); }
 }
 
 /* ─── Download Button ─── */
@@ -520,4 +677,5 @@ footer {
   .hero-download { animation: none !important; opacity: 1 !important; }
   .download-btn { display: none !important; }
   footer { border-top: 1px solid rgba(255,255,255,0.25); }
+  #splash { display: none !important; }
 }
