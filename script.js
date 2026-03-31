@@ -2,9 +2,14 @@
 document.body.classList.add('splash-active');
 function openInvitation() {
   const splash = document.getElementById('splash');
+  const hero = document.getElementById('hero'); // your hero section
   splash.classList.add('open');
   document.body.classList.remove('splash-active');
-  // Remove splash after curtain finishes sliding
+  // Scroll to hero after curtain animation starts
+  setTimeout(() => {
+    hero.scrollIntoView({ behavior: 'smooth' });
+  }, 500);
+  // Remove splash after animation completes
   setTimeout(() => {
     splash.remove();
   }, 4500);
