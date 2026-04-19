@@ -79,14 +79,14 @@ setInterval(updateCountdown, 1000);
 
 function downloadInvitation() {
   // 1. Path to your PNG file in the assets folder
-  const filePath = './assets/Sasi_Lavs_Wedding_Invitation.pdf'; 
+  const filePath = './assets/Sasi_Lavs_Wedding_Invitation.jpg'; 
   
   // 2. Create a temporary anchor element
   const a = document.createElement('a');
   a.href = filePath;
   
   // 3. Set the name you want the file to have when saved
-  a.download = 'Sasi_Lavs_Wedding_Invitation.pdf';
+  a.download = 'Sasi_Lavs_Wedding_Invitation.jpg';
   
   // 4. Trigger the download
   document.body.appendChild(a);
