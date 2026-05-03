@@ -5,6 +5,10 @@ function openInvitation() {
   const hero = document.getElementById('hero'); // your hero section
   splash.classList.add('open');
   document.body.classList.remove('splash-active');
+  //Trigger hero animation
+  setTimeout(() => {
+    document.getElementById('hero').classList.add('hero-animated');
+  },800);
   // Scroll to hero after curtain animation starts
   setTimeout(() => {
     hero.scrollIntoView({ behavior: 'smooth' });
